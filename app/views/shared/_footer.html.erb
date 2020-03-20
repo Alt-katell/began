@@ -47,7 +47,7 @@
         </li>
       </div>
       <div class="footer-icon-section">
-        <li class="footer-nav-item <%= params[:action] == 'choose_cookbook' ? 'active' : '' %> ">
+        <li class="footer-nav-item <%= @cookbook_icon ? 'active' : '' %> ">
           <%= link_to choose_cookbook_path do %>
           <div class="nav-element">
             <i class="fas fa-utensils"></i>

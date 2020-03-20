@@ -18,6 +18,7 @@ class RecipesController < ApplicationController
     else
       @recipes = Recipe.all
     end
-  end
 
+    @cookbook_icon = true
+  end
 end
