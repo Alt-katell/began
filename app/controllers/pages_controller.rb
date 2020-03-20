@@ -33,6 +33,7 @@ class PagesController < ApplicationController
   end
 
   def choose_cookbook
+    @cookbook_icon = true
   end
 
   def choose_category
@@ -41,6 +42,7 @@ class PagesController < ApplicationController
 
   def cookbook
     @cookbook = current_user.recipes
+    @cookbook_icon = true
   end
 
   def profile
