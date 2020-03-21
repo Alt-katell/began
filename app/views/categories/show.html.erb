@@ -26,19 +26,18 @@
       <span class="logo-b">b</span>
     </div>
   <% end %>
-
 </div>
 
 <div class="container">
 
+  <%= link_to choose_category_path do %>
+    <div class="change-goal-button">
+      <span class="change-goal">CHANGE GOAL</span>
+      <i class="fas fa-sync-alt"></i>
+    </div>
+  <% end %>
 
-      <%= link_to choose_category_path do %>
-        <div class="change-goal-button">
-          <span class="change-goal">CHANGE GOAL</span>
-          <i class="fas fa-sync-alt"></i>
-        </div>
-      <% end %>
-
+  <% if @category.name == "flexitarian" %>
     <% @challenges.each_with_index do |challenge, index| %>
       <% challenge_before = @challenges.detect { |in_challenge| in_challenge.position == challenge.position - 1 } %>
 
@@ -80,4 +79,7 @@
         </div>
       </div>
     <% end %>
+  <% else %>
+    <p>This goal has not been developed yet, please change goal and select Flexitarian.</p>
+  <% end %>
 </div>
