@@ -33,7 +33,7 @@
 <div class="recipe-column">
 
   <% @cookbook.each do |recipe| %>
-    <div class="recipe-card-cookbook">
+    <div class="recipe-card">
       <%= link_to recipe_path(recipe.id) do %>
 
       <%= cl_image_tag recipe.photo.key, class: "recipe-img-small", alt: "alttext" %>
