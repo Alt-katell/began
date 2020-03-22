@@ -123,9 +123,24 @@ a, a:hover {
   font-size: 40px;
   position: absolute;
   top: 32%;
-  left: 23%;
+  left: 40%;
 }
 
+.percent {
+  position: relative;
+}
+
+// Responsive
+
+@media (min-width: 768px) {
+  .cards-button {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .card-button {
+    margin-right: 80px;
+  }
+}
 
 
 
