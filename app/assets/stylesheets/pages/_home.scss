@@ -130,6 +130,18 @@ a, a:hover {
   position: relative;
 }
 
+// Responsive
+
+@media (min-width: 768px) {
+  .cards-button {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .card-button {
+    margin-right: 80px;
+  }
+}
+
 
 
 
