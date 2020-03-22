@@ -1,5 +1,3 @@
-@import "config/colors";
-
 html {
   scroll-behavior: smooth;
 }
@@ -43,36 +41,9 @@ img {
   text-align: center;
 }
 
-.search-form {
-  margin: 0 auto;
-  padding-bottom: 25px;
-
-  .form-control {
-    width:80%;
-    margin-right: 15px;
-    border-radius: 15px;
-  }
-
-  .button-search {
-    background-color: $yellow;
-    color: white;
-    border:0;
-    border-radius: 15px;
-    padding: 4px 12px;
-    font-size: 20px;
-  }
-}
-
-.recipe-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 20px;
-}
-
 .paragraph-title {
   font-weight: bold;
 }
-
 
 mark {
   margin-right: -12px;
@@ -80,24 +51,8 @@ mark {
   background-color: $yellow;
 }
 
-.fa-utensil-spoon.green {
-  color: #3FCCC4;
-  font-size: 16px;
-  margin: -2px;
-  transform: rotate(-45deg);
-}
-
-.fa-utensil-spoon {
-  color: #C4C4C4;
-  font-size: 16px;
-  margin: -2px;
-  transform: rotate(-45deg);
-}
-
 .alert-danger {
   display: none;
 }
 
-.fas.fa-square {
-  color: $yellow;
-}
+
