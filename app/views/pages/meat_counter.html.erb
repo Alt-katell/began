@@ -13,53 +13,43 @@
       <span class="logo-b">b</span>
     </div>
   <% end %>
-
 </div>
 
 <div class="container">
-
-<div class="calendar-text">
-  <h2 class="third-title"><mark></mark>MARK YOUR PROGRESS</h2>
+  <div class="calendar-text">
+    <h2 class="third-title"><mark></mark>MARK YOUR PROGRESS</h2>
     <p>Be proud of yourself! <br>
     Click on today's date if you did not eat meat.</p>
-</div>
+  </div>
 
-    <%= month_calendar do |date| %>
-      <% no_meat_day = @no_meat_days.detect { |nmd| nmd.created_at.to_date == date } %>
-
+  <%= month_calendar do |date| %>
+    <% no_meat_day = @no_meat_days.detect { |nmd| nmd.created_at.to_date == date } %>
       <% if no_meat_day.nil? %>
-
         <% if date == (Time.now.utc - 14400).to_date %>
           <%= link_to add_one_path, method: :post, remote: true, class: 'mark-day' do  %>
               <%= date.day %>
           <% end %>
-
         <% elsif date < (Time.now.utc - 14400).to_date %>
           <div class="not-done">
             <%= date.day %>
           </div>
-
         <% else %>
           <div class="no-mark-day">
             <%= date.day %>
           </div>
-
         <% end %>
-
       <% else %>
         <div class="done">
           <%= date.day %>
         </div>
       <% end %>
     <% end %>
-
-
 </div>
 
 <script>
-    const div = document.querySelector('.mark-day');
+  const div = document.querySelector('.mark-day');
 
-    div.addEventListener('click', (event) => {
-      event.currentTarget.classList.add('done');
-    });
+  div.addEventListener('click', (event) => {
+    event.currentTarget.classList.add('done');
+  });
 </script>
