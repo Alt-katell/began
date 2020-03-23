@@ -104,6 +104,25 @@
   padding: 0 10px;
 }
 
+// Responsive
+@media only screen and (min-width : 992px) {
+  .content-section {
+    width: 650px;
+    margin: 150px auto;
+    flex-direction: row;
+    .text-section {
+      text-align: left;
+    }
+  }
+
+  .content-section.photo-first {
+    flex-direction: row-reverse;
+    .text-section {
+      text-align: right;
+    }
+  }
+}
+
 
 
 
