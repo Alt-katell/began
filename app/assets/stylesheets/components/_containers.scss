@@ -6,8 +6,15 @@
   align-items: center;
 }
 
-
 .container {
   margin: 30px auto 120px auto;
   padding: 0 25px;
+}
+
+// Responsive
+@media only screen and (min-width : 768px) {
+  .signup-login-container {
+    width: 500px;
+    margin: 40px auto;
+  }
 }
