@@ -25,6 +25,7 @@
   <div class="recipe-page">
     <h2 class="recipe-title"><mark></mark><%= @recipe.name.upcase%></h2>
 
+    <!-- Pop-up adding and removing from cookbook -->
     <div class="recipe-img-large">
       <div class="msg-hidden" id="add_recipe">
         <p><i class="fas fa-check"></i></p>
@@ -36,9 +37,11 @@
         <p>Removed from your cookbook</p>
       </div>
 
+    <!-- Recipe image -->
       <%= cl_image_tag @recipe.photo.key %>
     </div>
 
+    <!-- Difficulty spoons, preparation time and heart -->
     <div class="recipe-info">
       <div class= "recipe-info-one">
         <div class="recipe-difficulty">
@@ -74,6 +77,7 @@
       </div>
     </div>
 
+    <!-- Ingredients -->
     <div class="recipe-ingredients">
       <p class="paragraph-title">INGREDIENTS</p>
       <% @recipe.ingredients.each do |ingredient|%>
@@ -81,6 +85,7 @@
       <% end %>
     </div>
 
+    <!-- Preparation steps -->
     <div class="recipe-cooking">
       <p class="paragraph-title">MAKE IT NOW</p>
       <% @recipe.recipe_methods.each_with_index do |recipe_method, index| %>
