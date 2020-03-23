@@ -13,102 +13,79 @@
       <span class="logo-b">b</span>
     </div>
   <% end %>
-
 </div>
 
 <div class="container">
-
-  <div class="post_part">
-
-    <div id="add_a_post">
-      <i class="fas fa-plus-circle" id="add_a_postplus"></i>
+  <div class="post-part">
+    <div id="add-a-post">
+      <i class="fas fa-plus-circle" id="add-a-postplus"></i>
     </div>
 
     <% if @posts.empty? %>
       <div class="forum-head">
-      <h2><mark></mark>No posts for now...</h2>
-      <p>Be the first to share something with the community !</p>
+        <h2><mark></mark>No posts for now...</h2>
+        <p>Be the first to share something with the community!</p>
+      </div>
     <% else %>
-      <h2><mark></mark>MESSAGES</h2>
+      <h2 class="messages"><mark></mark>MESSAGES</h2>
 
-    <% @posts.each do |post| %>
-      <div class="post_partie" id='post-<%= post.id %>'>
-
-          <div class="post_content">
-
-            <div class="content_part">
+      <% @posts.each do |post| %>
+        <div class="post-partie" id='post-<%= post.id %>'>
+          <div class="post-content">
+            <div class="content-part">
               <div class="content-title">
-                <p style="text-transform: uppercase; font-weight: bold;"> <%= post.user.first_name %></p>
+                <p style="text-transform: uppercase; font-weight: bold;"><%= post.user.first_name %></p>
                 <p style="font-size: 16px; color: gray;"><%= post.created_at.strftime("%d-%m") %></p>
               </div>
               <p><%= post.content %></p>
             </div>
 
-            <div class="icon_part">
-              <p class="comment_toggle"><i class="fas fa-comments"></i> <span style="font-size: 16px; color: gray;"> Comments (<%= post.comments.count %>)</span></p>
+            <div class="icon-part">
+              <p class="comment-toggle"><i class="fas fa-comments"></i> <span style="font-size: 16px; color: gray;"> Comments (<%= post.comments.count %>)</span></p>
             </div>
-
           </div>
 
-
-          <div class="comment_part  d-none">
-
-            <div class="comments_display">
+          <div class="comment-part  d-none">
+            <div class="comments-display">
               <% post.comments.each do |comment| %>
-                <div class="comment_content">
+                <div class="comment-content">
                   <%= comment.content %> - <span style="color: gray"><%= comment.user.first_name %></span>
                 </div>
               <% end %>
             </div>
 
-            <div class="comment_form">
-
+            <div class="comment-form">
               <%= simple_form_for [post, @comment] do |f| %>
-                <div class="form_style">
-                  <div class="form_content">
-                    <%= f.input :content, label: false, placeholder: 'Add a new comment !' %>
-                    <%= button_tag(type: 'submit', class: "send_btn") do %>
-                    <i class="fas fa-paper-plane"></i>
+                <div class="form-style">
+                  <div class="form-content">
+                    <%= f.input :content, label: false, placeholder: 'Add a new comment!' %>
+                    <%= button_tag(type: 'submit', class: "send-btn comment") do %>
+                      <i class="fas fa-paper-plane"></i>
                     <% end %>
                   </div>
-
                 </div>
               <% end %>
-
             </div>
-
           </div>
-
       </div>
+      <% end %>
     <% end %>
-
-    <% end %>
-
   </div>
 
-  <div class="form_part d-none">
-
+  <div class="form-part d-none">
     <p id="close"><i class="fas fa-times-circle"></i></p>
 
-    <div class="post_form">
-
+    <div class="post-form">
       <%= simple_form_for (@post) do |f| %>
-        <div class="form_style">
-
-          <div class="form_content">
-            <%= f.input :content, label: false, placeholder: 'Add a new post !' %>
-            <%= button_tag(type: 'submit', class: "send_btn") do %>
+        <div class="form-style">
+          <div class="form-content">
+            <%= f.input :content, label: false, placeholder: 'Add a new post!' %>
+            <%= button_tag(type: 'submit', class: "send-btn post") do %>
               <i class="fas fa-paper-plane"></i>
             <% end %>
           </div>
-
         </div>
       <% end %>
-
     </div>
-
   </div>
-
-  </div>
-
 </div>
