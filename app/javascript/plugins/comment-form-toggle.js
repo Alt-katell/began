@@ -1,16 +1,16 @@
 
-const form_toggle = () => {
+const formToggle = () => {
 
-  const post_sections = document.querySelectorAll('.post_partie')
+  const postSections = document.querySelectorAll('.post-partie')
 
-  post_sections.forEach((post_section) => {
-      const btn = post_section.querySelector('.comment_toggle')
+  postSections.forEach((postSection) => {
+      const btn = postSection.querySelector('.comment-toggle')
 
     btn.addEventListener('click', () => {
-      const comment = post_section.querySelector('.comment_part');
+      const comment = postSection.querySelector('.comment-part');
       comment.classList.toggle('d-none');
     });
   });
 };
 
-export { form_toggle };
+export { formToggle };
