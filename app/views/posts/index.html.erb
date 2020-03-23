@@ -27,7 +27,7 @@
         <p>Be the first to share something with the community!</p>
       </div>
     <% else %>
-      <h2><mark></mark>MESSAGES</h2>
+      <h2 class="messages"><mark></mark>MESSAGES</h2>
 
       <% @posts.each do |post| %>
         <div class="post-partie" id='post-<%= post.id %>'>
@@ -59,7 +59,7 @@
                 <div class="form-style">
                   <div class="form-content">
                     <%= f.input :content, label: false, placeholder: 'Add a new comment!' %>
-                    <%= button_tag(type: 'submit', class: "send-btn") do %>
+                    <%= button_tag(type: 'submit', class: "send-btn comment") do %>
                       <i class="fas fa-paper-plane"></i>
                     <% end %>
                   </div>
@@ -80,7 +80,7 @@
         <div class="form-style">
           <div class="form-content">
             <%= f.input :content, label: false, placeholder: 'Add a new post!' %>
-            <%= button_tag(type: 'submit', class: "send-btn") do %>
+            <%= button_tag(type: 'submit', class: "send-btn post") do %>
               <i class="fas fa-paper-plane"></i>
             <% end %>
           </div>

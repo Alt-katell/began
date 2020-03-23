@@ -58,12 +58,21 @@
 
   .send-btn {
     font-size: 30px;
-    background-color: white;
     border: none;
-    color: $green;
     border-radius: 6px;
     padding: 5px 10px 5px 6px;
   }
+
+  .send-btn.post {
+      background-color: $green;
+      color: white;
+  }
+
+  .send-btn.comment {
+      background-color: white;
+      color: $green;
+  }
+
 }
 
 .form-content {
@@ -78,6 +87,7 @@
 
     .form-control {
       height:60px;
+      border-radius: 6px;
     }
   }
 
@@ -131,9 +141,22 @@
 
 // Responsive
 
-@media only screen and (min-width : 768px) {
-  .post-form {
+@media only screen and (min-width : 992px) {
+  .post-partie {
     margin-right: 200px;
     margin-left: 200px;
+  }
+
+  .post-form {
+    margin-right: 350px;
+    margin-left: 350px;
+  }
+
+  #close {
+    margin-left: 350px;
+  }
+
+  .messages {
+    text-align: center;
   }
 }
