@@ -13,7 +13,6 @@
       <span class="logo-b">b</span>
     </div>
   <% end %>
-
 </div>
 
 <div class="container">
@@ -31,30 +30,27 @@
     <% end %>
   </div>
 
-
   <div class="recipe-column">
-
     <% @recipes.each do |recipe| %>
       <div class="recipe-card">
         <%= link_to recipe_path(recipe.id) do %>
-
           <%= cl_image_tag recipe.photo.key, class: "recipe-img-small", alt: "alttext" %>
 
           <div class="recipe-card-text-small">
             <h2 class="recipe-name-small"><%= recipe.name %></h2>
             <div class="recipe-difficulty-small">
               <% if recipe.difficulty == "Easy" %>
-                      <i class="fas fa-utensil-spoon green"></i>
-                      <i class="fas fa-utensil-spoon"></i>
-                      <i class="fas fa-utensil-spoon"></i>
-                    <% elsif recipe.difficulty == "More effort"%>
-                      <i class="fas fa-utensil-spoon green"></i>
-                      <i class="fas fa-utensil-spoon green"></i>
-                      <i class="fas fa-utensil-spoon"></i>
-                    <% else %>
-                      <i class="fas fa-utensil-spoon"></i>
-                      <i class="fas fa-utensil-spoon"></i>
-                      <i class="fas fa-utensil-spoon"></i>
+                <i class="fas fa-utensil-spoon green"></i>
+                <i class="fas fa-utensil-spoon"></i>
+                <i class="fas fa-utensil-spoon"></i>
+              <% elsif recipe.difficulty == "More effort"%>
+                <i class="fas fa-utensil-spoon green"></i>
+                <i class="fas fa-utensil-spoon green"></i>
+                <i class="fas fa-utensil-spoon"></i>
+              <% else %>
+                <i class="fas fa-utensil-spoon"></i>
+                <i class="fas fa-utensil-spoon"></i>
+                <i class="fas fa-utensil-spoon"></i>
               <% end %>
             </div>
           </div>
