@@ -72,3 +72,17 @@
 .carousel-dot.active {
   background-color: black !important;
 }
+
+// Responsive
+
+@media only screen and (min-width : 768px) {
+  .diet-card {
+    width: 400px;
+    height: 400px;
+    margin: 20px;
+  }
+
+  .diet-card-text {
+  margin-bottom: 25%;
+  }
+}
