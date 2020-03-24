@@ -1,7 +1,9 @@
 <div id="navbar">
-  <div class="navbar-logo">
+  <%= link_to homepage_path do %>
+    <div class="navbar-logo">
       <%= image_tag("began-logo.png", alt: "Began logo", class: "logo") %>
-  </div>
+    </div>
+  <% end %>
 
   <div class="navbar-go">
     <% if current_user.category.nil? %>
