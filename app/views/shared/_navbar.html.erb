@@ -1,72 +1,47 @@
 <div id="navbar">
-  <% if current_user.category.nil? %>
-    <%= link_to choose_category_path do %>
-      <div class="small-logo">
-        <span class="purple-circle"></span>
-        <span class="go">go</span>
-      </div>
-    <% end %>
-  <% else %>
-    <% if current_user.challenges.empty? %>
-      <%= link_to category_path(current_user.category) do %>
-        <div class="small-logo">
-          <span class="purple-circle"></span>
-          <span class="go">go</span>
-        </div>
+  <div class="navbar-logo">
+      <%= image_tag("began-logo.png", alt: "Began logo", class: "logo") %>
+  </div>
+
+  <div class="navbar-go">
+    <% if current_user.category.nil? %>
+      <%= link_to choose_category_path do %>
+        <p class="go-navbar">GO</p>
       <% end %>
     <% else %>
-      <%= link_to category_path(current_user.category, anchor: current_user.challenges.last.position) do %>
-        <div class="small-logo">
-          <span class="purple-circle"></span>
-          <span class="go">go</span>
-        </div>
+      <% if current_user.challenges.empty? %>
+        <%= link_to category_path(current_user.category) do %>
+          <p class="go-navbar">GO</p>
+        <% end %>
+      <% else %>
+        <%= link_to category_path(current_user.category, anchor: current_user.challenges.last.position) do %>
+          <p class="go-navbar">GO</p>
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+  </div>
 
-  <ul class="footer-nav">
-    <% if user_signed_in? %>
-      <div class="footer-icon-section">
-        <li class="footer-nav-item <%= params[:action] == 'home' ? 'active' : '' %> ">
-          <%= link_to homepage_path  do %>
-            <div class="nav-element">
-              <i class="fas fa-home"></i>
-              <p class="footer-nav-text">Dashboard</p>
-            </div>
-          <% end %>
-        </li>
-        <li class="footer-nav-item <%= params[:action] == 'meat_counter' ? 'active' : '' %> ">
-          <%= link_to meat_counter_path do %>
-            <div class="nav-element">
-              <i class="fas fa-calendar-check"></i>
-              <p class="footer-nav-text">Counter</p>
-            </div>
-          <% end %>
-        </li>
-      </div>
-
-      <div class="footer-icon-section">
-        <li class="footer-nav-item <%= @cookbook_icon ? 'active' : '' %> ">
-          <%= link_to choose_cookbook_path do %>
-            <div class="nav-element">
-              <i class="fas fa-utensils"></i>
-              <p class="footer-nav-text">Cookbook</p>
-            </div>
-          <% end %>
-        </li>
-        <li class="footer-nav-item <%= @forum ? 'active' : '' %> ">
-          <%= link_to posts_path do %>
-            <div class="nav-element">
-              <i class="fas fa-users"></i>
-              <p class="footer-nav-text">Forum</p>
-            </div>
-          <% end %>
-        </li>
-      </div>
-    <% else %>
-      <li class="nav-item">
-        <%= link_to "Login", new_user_session_path %>
-      </li>
+  <div class="navbar-dashboard">
+    <%= link_to homepage_path  do %>
+      <p class="element-navbar <%= params[:action] == 'home' ? 'nav-active' : '' %> ">Dashboard</p>
     <% end %>
-  </ul>
+  </div>
+
+  <div class="navbar-counter">
+    <%= link_to meat_counter_path do %>
+      <p class="element-navbar <%= params[:action] == 'meat_counter' ? 'nav-active' : '' %>">Counter</p>
+    <% end %>
+  </div>
+
+  <div class="navbar-cookbook">
+    <%= link_to choose_cookbook_path do %>
+      <p class="element-navbar <%= @cookbook_icon ? 'nav-active' : '' %>">Cookbook</p>
+    <% end %>
+  </div>
+
+  <div class="navbar-forum">
+    <%= link_to posts_path do %>
+      <p class="element-navbar <%= @forum ? 'nav-active' : '' %>">Forum</p>
+    <% end %>
+  </div>
 </div>

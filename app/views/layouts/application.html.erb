@@ -29,6 +29,12 @@
   </head>
 
   <body>
+    <% unless current_user.nil? || request.env['PATH_INFO'] == root_path %>
+    <div id="navbar">
+      <%=  render 'shared/navbar' %>
+    </div>
+    <% end %>
+
     <%= yield %>
 
     <% unless current_user.nil? || request.env['PATH_INFO'] == root_path %>
