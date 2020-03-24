@@ -145,7 +145,7 @@ challenge1_flexi = Challenge.create(category: flexitarian, name: 'Meet tofu', de
 puts "-------------------------------------------------------------------------------------------------------------------"
 
 puts "SECOND CHALLENGE FLEXETARIAN"
-challenge2_flexi = Challenge.create(category: flexitarian, name: 'Cook tofu', description: 'Look into recipes for tofu and cook something! There is a lot of possibilites, just try one', position: flexitarian.challenges.count + 1)
+challenge2_flexi = Challenge.create(category: flexitarian, name: 'Cook tofu', description: 'Look into recipes for tofu and cook something! There is a lot of possibilities, just try one', position: flexitarian.challenges.count + 1)
 
 puts "Adding special recipes for the second challenge"
 scratch_top6('tofu').each do |recipe|

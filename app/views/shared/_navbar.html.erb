@@ -6,16 +6,16 @@
   <div class="navbar-go">
     <% if current_user.category.nil? %>
       <%= link_to choose_category_path do %>
-        <p class="go-navbar">GO</p>
+        <p class="go-navbar <%= @game ? 'nav-active' : '' %> ">GO!</p>
       <% end %>
     <% else %>
       <% if current_user.challenges.empty? %>
         <%= link_to category_path(current_user.category) do %>
-          <p class="go-navbar">GO</p>
+          <p class="go-navbar <%= @game ? 'nav-active' : '' %> ">GO!</p>
         <% end %>
       <% else %>
         <%= link_to category_path(current_user.category, anchor: current_user.challenges.last.position) do %>
-          <p class="go-navbar">GO</p>
+          <p class="go-navbar <%= @game ? 'nav-active' : '' %> ">GO!</p>
         <% end %>
       <% end %>
     <% end %>
@@ -44,4 +44,13 @@
       <p class="element-navbar <%= @forum ? 'nav-active' : '' %>">Forum</p>
     <% end %>
   </div>
+
+
+  <%= link_to destroy_user_session_path, :method => :delete do %>
+    <div class="navbar-logout">
+      <p class="element-navbar">Log Out</p>
+      <i class="fas fa-power-off"></i>
+    </div>
+  <% end %>
+
 </div>

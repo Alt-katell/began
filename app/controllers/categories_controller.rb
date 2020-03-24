@@ -9,5 +9,7 @@ class CategoriesController < ApplicationController
       current_user.save
     end
     @challenges = @category.challenges
+
+    @game = true
   end
 end

@@ -4,5 +4,7 @@ class ChallengesController < ApplicationController
     if @challenge.is_quizz
       @questions = @challenge.questions
     end
+
+    @game = true
   end
 end

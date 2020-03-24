@@ -3,6 +3,8 @@ class RecipesController < ApplicationController
     @challenge = Challenge.find(params[:challenge_id])
     @recipes = @challenge.recipes
     @all_recipes = Recipe.all
+
+    @game = true
   end
 
   def show
