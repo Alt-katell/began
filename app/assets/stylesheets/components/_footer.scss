@@ -98,3 +98,11 @@
 .nav-element {
   text-align: center;
 }
+
+// Responsive
+
+@media only screen and (min-width : 768px) {
+  .footer {
+    display: none;
+  }
+}

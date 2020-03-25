@@ -1,6 +1,15 @@
 // Topbar
-.topbar.landing {
+.topbar-landing {
+  position:sticky;
+  top:0;
   height: 100px;
+  width: 100vw;
+  background-color: white;
+  border-bottom: 1px solid #EEEEEE;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000000;
 }
 
 // Container

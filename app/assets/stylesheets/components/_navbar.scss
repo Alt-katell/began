@@ -1,0 +1,40 @@
+#navbar {
+  display: none;
+}
+
+// Responsive
+@media only screen and (min-width : 768px) {
+  #navbar {
+    position: sticky;
+    top: 0;
+    height: 60px;
+    width: 100vw;
+    padding: 0 80px;
+    margin: 0;
+    background-color: white;
+    border-bottom: 1px solid #EEEEEE;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000000;
+
+    p {
+      margin-bottom: 0;
+      font-size: 18px;
+    }
+  }
+
+  .nav-active {
+    border-bottom: 6px solid #5626C4;
+    padding: 14px 16px;
+  }
+
+  .navbar-logout {
+    display: flex;
+    align-items: center;
+    p {
+      margin-right: 12px;
+    }
+  }
+}

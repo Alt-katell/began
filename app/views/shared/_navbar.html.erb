@@ -1,35 +1,58 @@
-<!-- <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to homepage_path, class: "navbar-brand" do %>
-    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
-    <% end %>
+<div id="navbar">
+  <%= link_to homepage_path do %>
+    <div class="navbar-logo">
+      <%= image_tag("began-logo.png", alt: "Began logo", class: "logo") %>
+    </div>
+  <% end %>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if user_signed_in? %>
-        <li class="nav-item active">
-          <%= link_to "Recipes", all_recipes_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item active">
-          <%= link_to "My cookbook", cookbook_path, class: "nav-link" %>
-        </li>
-        <li class="nav-item dropdown">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "Action", "#", class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-          </div>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
+  <div class="navbar-go">
+    <% if current_user.category.nil? %>
+      <%= link_to choose_category_path do %>
+        <p class="go-navbar <%= @game ? 'nav-active' : '' %> ">GO!</p>
       <% end %>
-    </ul>
+    <% else %>
+      <% if current_user.challenges.empty? %>
+        <%= link_to category_path(current_user.category) do %>
+          <p class="go-navbar <%= @game ? 'nav-active' : '' %> ">GO!</p>
+        <% end %>
+      <% else %>
+        <%= link_to category_path(current_user.category, anchor: current_user.challenges.last.position) do %>
+          <p class="go-navbar <%= @game ? 'nav-active' : '' %> ">GO!</p>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
-</div> -->
+
+  <div class="navbar-dashboard">
+    <%= link_to homepage_path  do %>
+      <p class="element-navbar <%= params[:action] == 'home' ? 'nav-active' : '' %> ">Dashboard</p>
+    <% end %>
+  </div>
+
+  <div class="navbar-counter">
+    <%= link_to meat_counter_path do %>
+      <p class="element-navbar <%= params[:action] == 'meat_counter' ? 'nav-active' : '' %>">Counter</p>
+    <% end %>
+  </div>
+
+  <div class="navbar-cookbook">
+    <%= link_to choose_cookbook_path do %>
+      <p class="element-navbar <%= @cookbook_icon ? 'nav-active' : '' %>">Cookbook</p>
+    <% end %>
+  </div>
+
+  <div class="navbar-forum">
+    <%= link_to posts_path do %>
+      <p class="element-navbar <%= @forum ? 'nav-active' : '' %>">Forum</p>
+    <% end %>
+  </div>
+
+
+  <%= link_to destroy_user_session_path, :method => :delete do %>
+    <div class="navbar-logout">
+      <p class="element-navbar">Log Out</p>
+      <i class="fas fa-power-off"></i>
+    </div>
+  <% end %>
+
+</div>

@@ -38,6 +38,8 @@ class PagesController < ApplicationController
 
   def choose_category
     @category = Category.all
+
+    @game = true
   end
 
   def cookbook

@@ -16,6 +16,13 @@
 </div>
 
 <div class="container">
+ <%= link_to category_path(@challenge.category, anchor: current_user.challenges.last.position) do %>
+    <div class="desktop-return-button">
+      <i class="fas fa-chevron-left" style="margin-right: 6px;"></i>
+      <p>Back to challenges</p>
+    </div>
+  <% end %>
+
   <h1 class="head-title">CHALLENGE <%= @challenge.position %></h1>
 
   <h2 class="second-title"><%= @challenge.name.upcase %></h2>
