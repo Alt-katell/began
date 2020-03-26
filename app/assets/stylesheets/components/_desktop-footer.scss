@@ -1,0 +1,35 @@
+.tablet-desktop-footer {
+  display:none;
+}
+
+// Responsive
+@media only screen and (min-width : 768px) {
+  .tablet-desktop-footer {
+    display: block;
+    background-color: $pink;
+    height: 100px;
+    margin-top: -66px;
+    padding: 10px 0;
+    p {
+      text-align: center;
+      margin: 0;
+      color: white;
+    }
+  }
+
+  .tablet-desktop-footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      margin: 0;
+    }
+  }
+
+  .social {
+    font-size: 32px;
+    color: white !important;
+    transition: 0.3;
+    padding: 0 10px;
+  }
+}
